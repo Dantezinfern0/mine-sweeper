@@ -9,4 +9,29 @@ html {
 body {
   margin: 0;
   min-height: 100%;
+  background-color: gray;
 }
+button {
+  border-style: thin;
+  border-width: 2px;
+  border-color: darkslategrey;
+}
+header {
+  text-align: center;
+  font-size: 3rem;
+  padding: 1rem 0 2rem 0;
+  font-weight: bold;
+}
+.container-8x8 {
+  justify-content: center;
+  display: grid;
+  grid-template-rows: 40px 40px 40px 40px 40px 40px 40px 40px;
+  grid-template-columns: 40px 40px 40px 40px 40px 40px 40px 40px;
+  grid-gap: 0;
+}
+.td-box-class {
+  border: solid 2rem;
+  align-content: center;
+  align-items: center;
+}
+
