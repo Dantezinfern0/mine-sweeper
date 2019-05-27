@@ -22,17 +22,8 @@ header {
   padding: 1rem 0 2rem 0;
   font-weight: bold;
 }
-.container-8x8 {
-  justify-content: center;
-  display: grid;
-  grid-template-rows: 40px 40px 40px 40px 40px 40px 40px 40px;
-  grid-template-columns: 40px 40px 40px 40px 40px 40px 40px 40px;
-  grid-gap: 0;
-}
 .td-box-class {
   border: solid 2rem;
-  align-content: center;
-  align-items: center;
 }
 .tdBox {
   border: 0.5rem solid grey;
@@ -43,12 +34,10 @@ header {
   background-color: white;
 }
 .flag {
-  /* background-image: url(./components/flag.png); */
-  background-size: contain;
+ background-color: red;
 }
 .bomb {
-  /* background-image: url(#); */
-  background-size: contain;
+  background-color: green;
 }
 .number {
   background-color: white;
