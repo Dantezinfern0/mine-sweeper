@@ -92,13 +92,13 @@ class App extends Component {
     console.log('Game', this.state.game)
     return (
       <main>
-        <h1 className="mainTitle"> Let's Play Mine Sweeper </h1>
+        <header> Let's Play Mine Sweeper </header>
         <table>
           <tbody>
             {Object.keys(this.state.game).length > 0 &&
               this.state.game.board.map((row, i) => (
                 <tr key={i}>
-                  {row.map((column, j) => (
+                  {row.map((col, j) => (
                     <td
                       key={j}
                       className={this.checkCell(this.state.game.board[i][j])}

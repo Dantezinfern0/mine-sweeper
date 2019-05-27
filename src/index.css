@@ -22,29 +22,21 @@ header {
   padding: 1rem 0 2rem 0;
   font-weight: bold;
 }
-.td-box-class {
-  border: solid 2rem;
-}
 .tdBox {
-  border: 0.5rem solid grey;
+  border: 0.5rem solid green;
   padding: 2rem;
-  background-color: grey;
+  background-color: greenyellow;
 }
 .reveal {
   background-color: white;
 }
 .flag {
- background-color: red;
+ background-color: orange;
 }
 .bomb {
-  background-color: green;
+  background-color: red;
 }
 .number {
-  background-color: white;
+  background-color: lightgray;
   color: green;
-}
-.mainTitle {
-  font-family: 'Anton', sans-serif;
-  text-align: center;
-  font-size: 3rem;
 }
