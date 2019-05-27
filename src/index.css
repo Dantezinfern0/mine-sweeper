@@ -34,4 +34,28 @@ header {
   align-content: center;
   align-items: center;
 }
-
+.tdBox {
+  border: 0.5rem solid grey;
+  padding: 2rem;
+  background-color: grey;
+}
+.reveal {
+  background-color: white;
+}
+.flag {
+  /* background-image: url(./components/flag.png); */
+  background-size: contain;
+}
+.bomb {
+  /* background-image: url(#); */
+  background-size: contain;
+}
+.number {
+  background-color: white;
+  color: green;
+}
+.mainTitle {
+  font-family: 'Anton', sans-serif;
+  text-align: center;
+  font-size: 3rem;
+}
