@@ -113,7 +113,9 @@ class App extends Component {
               ))}
           </tbody>
         </table>
-        <button class="reset-button">Reset Game</button>
+        <div class="reset-button">
+        {/* <button onClick={#}>Reset Game</button> */}
+        </div>
       </main>
     )
   }
