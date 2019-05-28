@@ -12,7 +12,7 @@ class CellLogic extends Component {
     } else if (this.props.cellStatus === 'F') {
       rv = (
         <>
-          <span>🐶</span>
+          <span>📍</span>
         </>
       )
     }

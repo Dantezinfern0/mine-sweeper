@@ -79,7 +79,7 @@ class App extends Component {
         this.setState({
           board: newGameState.board,
           status: newGameState.state,
-          gameId : newGameState.id
+          gameId: newGameState.id
         })
       })
   }
@@ -94,7 +94,7 @@ class App extends Component {
       return 'tdBox cellFlagBomb'
     } else if (+cell >= 1 || +cell <= 8) {
       return 'tdBox number'
-    }else if (this.state.game.state === 'win') {
+    } else if (this.state.game.state === 'win') {
       this.setState({
         message: 'You won!'
       })
@@ -131,28 +131,26 @@ class App extends Component {
           ) : null}
           {this.state.status === 'won' ? (
             <div>
-              <h1>  You won!  </h1>
+              <h1> You won! </h1>
             </div>
           ) : null}
         </div>
         <table>
           <tbody>
-          {this.state.board.map((row, i) => (
+            {this.state.board.map((row, i) => (
               <tr key={i}>
                 {row.map((column, j) => (
                   <td
                     key={j}
                     className={this.checkCell(this.state.board[i][j])}
                     onClick={() => this.leftClick(i, j)}
-                    onContextMenu={(event) => this.rightClick(event, i, j)}
+                    onContextMenu={event => this.rightClick(event, i, j)}
                   >
-                    <CellLogic 
-                    cellStatus ={this.state.board[i][j]}
-                    />
-                    </td>
-                  ))}
-                </tr>
-              ))}
+                    <CellLogic cellStatus={this.state.board[i][j]} />
+                  </td>
+                ))}
+              </tr>
+            ))}
           </tbody>
         </table>
         <div class="reset-button">
