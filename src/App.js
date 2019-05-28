@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import CellLogic from './components/CellLogic'
 
 class App extends Component {
   state = {
@@ -145,7 +146,9 @@ class App extends Component {
                     onClick={() => this.leftClick(i, j)}
                     onContextMenu={(event) => this.rightClick(event, i, j)}
                   >
-                    {this.state.board[i][j]}
+                    <CellLogic 
+                    cellStatus ={this.state.board[i][j]}
+                    />
                     </td>
                   ))}
                 </tr>
