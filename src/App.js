@@ -50,7 +50,8 @@ class App extends Component {
         })
       })
   }
-  rightClick = (row, col) => {
+  rightClick = (event, row, col) => {
+    event.preventDefault()
     console.log('clicked', row, col)
     fetch(
       `https://minesweeper-api.herokuapp.com/games/${this.state.game.id}/flag`,
@@ -103,7 +104,7 @@ class App extends Component {
                       key={j}
                       className={this.checkCell(this.state.game.board[i][j])}
                       onClick={() => this.leftClick(i, j)}
-                      onContextMenu={() => this.rightClick(i, j)}
+                      onContextMenu={event => this.rightClick(event, i, j)}
                     >
                       {this.state.game.board[i][j]}
                     </td>
@@ -112,6 +113,7 @@ class App extends Component {
               ))}
           </tbody>
         </table>
+        <button class="reset-button">Reset Game</button>
       </main>
     )
   }

@@ -11,32 +11,40 @@ body {
   min-height: 100%;
   background-color: gray;
 }
-button {
-  border-style: thin;
-  border-width: 2px;
-  border-color: darkslategrey;
-}
+
 header {
   text-align: center;
   font-size: 3rem;
-  padding: 1rem 0 2rem 0;
+  padding: 20px;
   font-weight: bold;
 }
 .tdBox {
-  border: 0.5rem solid green;
-  padding: 2rem;
+  border: 4px solid green;
+  padding: 20px;
   background-color: greenyellow;
 }
 .reveal {
   background-color: white;
+  border: 4px solid green;
+  padding: 20px;
 }
 .flag {
- background-color: orange;
+  background-color: orange;
+  border: 4px solid green;
+  padding: 20px;
 }
 .bomb {
   background-color: red;
+  border: 4px solid green;
+  padding: 20px;
 }
 .number {
   background-color: lightgray;
   color: green;
+  border: 4px solid green;
+  padding: 20px;
+}
+table {
+  display: flex;
+  justify-content: center;
 }
