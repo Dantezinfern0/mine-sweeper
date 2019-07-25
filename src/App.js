@@ -7,30 +7,25 @@ class App extends Component {
     status: '',
     gameId: '',
     difficulty: 0,
-    game: {}
+    game: []
   }
   componentDidMount() {
-    const data = {
-      number: 0
-    }
     const request = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(this.state.difficulty)
+      body: JSON.stringify('difficulty: 0')
     }
     fetch('https://minesweeper-api.herokuapp.com/games', request)
       .then(response => {
         return response.json()
       })
       .then(game => {
-        console.log(game)
+        // console.log(game)
         this.setState({
           game: game,
-          board: game.board,
-          status: game.state,
-          idGame: game.id
+          message: ''
         })
-        console.log(game)
+        // console.log(game)
       })
   }
   leftClick = (row, col) => {
@@ -50,7 +45,7 @@ class App extends Component {
     )
       .then(response => response.json())
       .then(newGameState => {
-        console.log(newGameState)
+        // console.log(newGameState)
         this.setState({
           board: newGameState.board,
           status: newGameState.state,
@@ -60,7 +55,7 @@ class App extends Component {
   }
   rightClick = (event, row, col) => {
     event.preventDefault()
-    console.log('clicked', row, col)
+    // console.log('clicked', row, col)
     fetch(
       `https://minesweeper-api.herokuapp.com/games/${this.state.game.id}/flag`,
       {
@@ -153,7 +148,7 @@ class App extends Component {
             ))}
           </tbody>
         </table>
-        <div class="reset-button">
+        <div className="reset-button">
           <button onClick={this.resetButton}>Reset Game</button>
         </div>
       </main>

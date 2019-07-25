@@ -5,15 +5,15 @@ class CellLogic extends Component {
     let rv = <>{this.props.cellStatus}</>
     if (this.props.cellStatus === '*') {
       rv = (
-        <>
-          <span>💩</span>
-        </>
+        <span>
+          <span role="img" aria-label="poop">💩</span>
+        </span>
       )
     } else if (this.props.cellStatus === 'F') {
       rv = (
-        <>
-          <span>📍</span>
-        </>
+        <span>
+          <span role="img" aria-label="pin">📍</span>
+        </span>
       )
     }
     return rv
