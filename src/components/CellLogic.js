@@ -15,6 +15,12 @@ class CellLogic extends Component {
           <span role="img" aria-label="pin">📍</span>
         </span>
       )
+    } else if (this.props.cellStatus === '_') {
+      rv = (
+        <span>
+          <span>{'  '}</span>
+        </span>
+      )
     }
     return rv
   }

@@ -63,3 +63,7 @@ table {
   text-align: center;
   margin: 0 30% 0 30%;
 }
+td {
+  height: 25px;
+  width:25px;
+}
