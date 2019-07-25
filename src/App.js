@@ -20,9 +20,9 @@ class App extends Component {
         return response.json()
       })
       .then(game => {
-        // console.log(game)
+        console.log(game)
         this.setState({
-          game: game,
+          board: game.board,
           message: ''
         })
         // console.log(game)
@@ -45,7 +45,7 @@ class App extends Component {
     )
       .then(response => response.json())
       .then(newGameState => {
-        // console.log(newGameState)
+        console.log('newgamestate',newGameState)
         this.setState({
           board: newGameState.board,
           status: newGameState.state,
@@ -148,9 +148,9 @@ class App extends Component {
             ))}
           </tbody>
         </table>
-        <div className="reset-button">
+        {/* <div className="reset-button">
           <button onClick={this.resetButton}>Reset Game</button>
-        </div>
+        </div> */}
       </main>
     )
   }
