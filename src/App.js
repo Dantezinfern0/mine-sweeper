@@ -13,7 +13,7 @@ class App extends Component {
     const request = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify('difficulty: 0')
+      body: this.state.difficulty
     }
     fetch('https://minesweeper-api.herokuapp.com/games', request)
       .then(response => {
@@ -114,11 +114,28 @@ class App extends Component {
     })
     this.componentDidMount()
   }
+  diffUp = () => {
+    if (this.state.difficulty === 2) {
+      this.state.difficulty = 2
+    } else if (this.state.difficulty < 2) {
+      this.state.difficulty += 1
+    }
+    this.componentDidMount()
+  }
+  diffDown = () => {
+    if (this.state.difficulty === 0) {
+      this.state.difficulty = 0
+    } else if (this.state.difficulty > 0) {
+      this.state.difficulty += -1
+    }
+    this.componentDidMount()
+  }
   render() {
     console.log('Game', this.state.game)
     return (
       <main>
         <header> Let's Play Mine Sweeper </header>
+        <p className="d-message">(Difficulty is set to {this.state.difficulty})</p>
         <div>
           {this.state.status === 'lost' ? (
             <div>
@@ -150,7 +167,9 @@ class App extends Component {
           </tbody>
         </table>
         <div className="reset-button">
+          <button onClick={this.diffDown}>Difficulty Down</button>
           <button onClick={this.resetButton}>Reset Game</button>
+          <button onClick={this.diffUp}>Difficulty Up</button>
         </div>
       </main>
     )
