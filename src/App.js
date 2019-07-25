@@ -23,7 +23,8 @@ class App extends Component {
         console.log(game)
         this.setState({
           board: game.board,
-          message: ''
+          message: '',
+          gameId: game.id
         })
         // console.log(game)
       })
@@ -31,7 +32,7 @@ class App extends Component {
   leftClick = (row, col) => {
     console.log('clicked', row, col)
     fetch(
-      `https://minesweeper-api.herokuapp.com/games/${this.state.game.id}/check`,
+      `https://minesweeper-api.herokuapp.com/games/${this.state.gameId}/check`,
       {
         method: 'POST',
         body: JSON.stringify({
@@ -55,7 +56,7 @@ class App extends Component {
   }
   rightClick = (event, row, col) => {
     event.preventDefault()
-    // console.log('clicked', row, col)
+    console.log('clicked', row, col)
     fetch(
       `https://minesweeper-api.herokuapp.com/games/${this.state.game.id}/flag`,
       {
@@ -148,9 +149,9 @@ class App extends Component {
             ))}
           </tbody>
         </table>
-        {/* <div className="reset-button">
+        <div className="reset-button">
           <button onClick={this.resetButton}>Reset Game</button>
-        </div> */}
+        </div>
       </main>
     )
   }
