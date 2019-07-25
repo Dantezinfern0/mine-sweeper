@@ -58,7 +58,7 @@ class App extends Component {
     event.preventDefault()
     console.log('clicked', row, col)
     fetch(
-      `https://minesweeper-api.herokuapp.com/games/${this.state.game.id}/flag`,
+      `https://minesweeper-api.herokuapp.com/games/${this.state.gameId}/flag`,
       {
         method: 'POST',
         body: JSON.stringify({
@@ -122,12 +122,12 @@ class App extends Component {
         <div>
           {this.state.status === 'lost' ? (
             <div>
-              <h1> You lost! </h1>
+              <h1 className="red-message"> You lost! </h1>
             </div>
           ) : null}
           {this.state.status === 'won' ? (
             <div>
-              <h1> You won! </h1>
+              <h1 className="green-message"> You won! </h1>
             </div>
           ) : null}
         </div>
