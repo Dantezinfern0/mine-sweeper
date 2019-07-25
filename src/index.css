@@ -1,5 +1,5 @@
 :root {
-  font: 16px / 1 sans-serif;
+  font: 11px / 1 sans-serif;
 }
 
 html {
@@ -64,6 +64,6 @@ table {
   margin: 0 30% 0 30%;
 }
 td {
-  height: 25px;
-  width:25px;
+  height: 11px;
+  width:11px;
 }
