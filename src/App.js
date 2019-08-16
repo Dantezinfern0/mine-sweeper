@@ -13,7 +13,9 @@ class App extends Component {
     const request = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: this.state.difficulty
+      body: JSON.stringify({
+        difficulty: this.state.difficulty
+      })
     }
     fetch('https://minesweeper-api.herokuapp.com/games', request)
       .then(response => {
