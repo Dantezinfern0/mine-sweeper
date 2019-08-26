@@ -1,4 +1,4 @@
-<a href='../images/Screen Shot 2019-08-26.png'/>
+<img href='../images/Screen Shot 2019-08-26.png'/>
 
 Mine Sweeper is a classic game where you click on a square and use the revealed numbers to predict where you think there is a bomb hiding.  
 
