@@ -1,3 +1,5 @@
+<a href='../images/Screen Shot 2019-08-26.png'/>
+
 Mine Sweeper is a classic game where you click on a square and use the revealed numbers to predict where you think there is a bomb hiding.  
 
 Right clicking a square will flag the square and identify it as a mine.  Left clicking will reveal what is underneath whether it is a number a bomb or a blank space.  The first click is always a gamble but usually after that you will be able to tell with careful thought where the bombs are for the most part.
