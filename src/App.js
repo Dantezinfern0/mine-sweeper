@@ -164,7 +164,7 @@ class App extends Component {
           <tbody>
             {this.state.board.map((row, i) => (
               <tr key={i}>
-                {row.map((column, j) => (
+                {row.map((col, j) => (
                   <td
                     key={j}
                     className={this.checkCell(this.state.board[i][j])}
