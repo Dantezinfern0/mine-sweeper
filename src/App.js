@@ -117,18 +117,28 @@ class App extends Component {
     this.componentDidMount()
   }
   diffUp = () => {
-    if (this.state.difficulty === 2) {
-      this.state.difficulty = 2
+    if (this.state.difficulty > 2) {
+      this.setState({
+        difficulty: 2
+      })
     } else if (this.state.difficulty < 2) {
-      this.state.difficulty += 1
+      let increment = this.state.difficulty
+      this.setState({
+        difficulty: increment += 1
+      })
     }
     this.componentDidMount()
   }
   diffDown = () => {
     if (this.state.difficulty === 0) {
-      this.state.difficulty = 0
+      this.setState({
+        difficulty : 0
+      })
     } else if (this.state.difficulty > 0) {
-      this.state.difficulty += -1
+      let decrement = this.state.difficulty
+      this.setState({
+        difficulty: decrement += -1
+      })
     }
     this.componentDidMount()
   }
