@@ -1,5 +1,5 @@
 :root {
-  font: 11px / 1 sans-serif;
+  font: 2px / 1 sans-serif;
 }
 
 html {
@@ -17,6 +17,11 @@ header {
   font-size: 3rem;
   padding: 20px;
   font-weight: bold;
+}
+button {
+  border-radius: 12px;
+  margin: 10rem;
+
 }
 .tdBox {
   border: 4px solid green;
@@ -69,4 +74,10 @@ td {
 }
 .d-message {
   text-align: center;
+}
+.font-size-text {
+  font-size: 64px;
+}
+.top-padding {
+  padding-top: 2rem;
 }

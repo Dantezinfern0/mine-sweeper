@@ -136,8 +136,8 @@ class App extends Component {
     console.log('Game', this.state.game)
     return (
       <main>
-        <header> Let's Play Mine Sweeper </header>
-        <p className="d-message">(Difficulty is set to {this.state.difficulty})</p>
+        <header className="font-size-text"> Let's Play Mine Sweeper </header>
+        <p className="d-message font-size-text">(Difficulty is set to {this.state.difficulty})</p>
         <div>
           {this.state.status === 'lost' ? (
             <div>
@@ -169,9 +169,9 @@ class App extends Component {
           </tbody>
         </table>
         <div className="reset-button">
-          <button onClick={this.diffDown}>Difficulty Down</button>
-          <button onClick={this.resetButton}>Reset Game</button>
-          <button onClick={this.diffUp}>Difficulty Up</button>
+          <button className="font-size-text" onClick={this.diffDown}>Difficulty Down</button>
+          <button className="font-size-text" onClick={this.resetButton}>Reset Game</button>
+          <button className="font-size-text" onClick={this.diffUp}>Difficulty Up</button>
         </div>
       </main>
     )
