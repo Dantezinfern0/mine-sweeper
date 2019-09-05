@@ -142,12 +142,25 @@ class App extends Component {
     }
     this.componentDidMount()
   }
+  checkDifficulty()  {
+    if (this.state.difficulty === 0) {
+      return 'Easy'
+    }
+    else if (this.state.difficulty === 1) {
+      return 'Medium'
+    }
+    else if (this.state.difficulty === 2) {
+      return 'Hard'
+    } else {
+      return 'Easy'
+    }
+  }
   render() {
-    console.log('Game', this.state.game)
+    // console.log('Game', this.state.game)
     return (
       <main>
         <header className="font-size-text"> Let's Play Mine Sweeper </header>
-        <p className="d-message font-size-text">(Difficulty is set to {this.state.difficulty})</p>
+        <p className="d-message font-size-text">(Difficulty is set to {this.checkDifficulty()})</p>
         <div>
           {this.state.status === 'lost' ? (
             <div>
