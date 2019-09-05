@@ -1,5 +1,5 @@
 :root {
-  font: 12px / 1 sans-serif;
+  font: 10px / 1 sans-serif;
 }
 
 html {
@@ -24,7 +24,9 @@ button {
   padding: 5rem;
 }
 span {
-  font-size: 3rem;
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
 }
 .tdBox {
   border: 4px solid green;
