@@ -17,11 +17,17 @@ header {
   font-size: 3rem;
   padding: 20px;
   font-weight: bold;
+  color: antiquewhite;
+  border-width: 2px;
+  border-color: antiquewhite;
+  border-style: solid;
 }
 button {
   border-radius: 12px;
-  margin: 10rem;
-  padding: 5rem;
+  margin: 1rem;
+  padding: 2rem;
+  background-color: antiquewhite;
+  font-weight: bold;
 }
 span {
   font-size: 1.5rem;

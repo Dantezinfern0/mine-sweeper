@@ -48,7 +48,7 @@ class App extends Component {
     )
       .then(response => response.json())
       .then(newGameState => {
-        console.log('newgamestate',newGameState)
+        console.log('newgamestate', newGameState)
         this.setState({
           board: newGameState.board,
           status: newGameState.state,
@@ -124,7 +124,7 @@ class App extends Component {
     } else if (this.state.difficulty < 2) {
       let increment = this.state.difficulty
       this.setState({
-        difficulty: increment += 1
+        difficulty: (increment += 1)
       })
     }
     this.componentDidMount()
@@ -132,27 +132,25 @@ class App extends Component {
   diffDown = () => {
     if (this.state.difficulty === 0) {
       this.setState({
-        difficulty : 0
+        difficulty: 0
       })
     } else if (this.state.difficulty > 0) {
       let decrement = this.state.difficulty
       this.setState({
-        difficulty: decrement += -1
+        difficulty: (decrement += -1)
       })
     }
     this.componentDidMount()
   }
-  checkDifficulty()  {
+  checkDifficulty() {
     if (this.state.difficulty === 0) {
       return 'Easy'
-    }
-    else if (this.state.difficulty === 1) {
+    } else if (this.state.difficulty === 1) {
       return 'Medium'
-    }
-    else if (this.state.difficulty === 2) {
+    } else if (this.state.difficulty === 2) {
       return 'Hard'
     } else {
-      return 'Easy'
+      return 'Error Assessing the Difficulty'
     }
   }
   render() {
@@ -160,7 +158,9 @@ class App extends Component {
     return (
       <main>
         <header className="font-size-text"> Let's Play Mine Sweeper </header>
-        <p className="d-message font-size-text">(Difficulty is set to {this.checkDifficulty()})</p>
+        <p className="d-message font-size-text">
+          (Difficulty is set to {this.checkDifficulty()})
+        </p>
         <div>
           {this.state.status === 'lost' ? (
             <div>
@@ -192,9 +192,15 @@ class App extends Component {
           </tbody>
         </table>
         <div className="reset-button">
-          <button className="font-size-text" onClick={this.diffDown}>Difficulty Down</button>
-          <button className="font-size-text" onClick={this.resetButton}>Reset Game</button>
-          <button className="font-size-text" onClick={this.diffUp}>Difficulty Up</button>
+          <button className="font-size-text" onClick={this.diffDown}>
+            Difficulty Down
+          </button>
+          <button className="font-size-text" onClick={this.resetButton}>
+            Reset Game
+          </button>
+          <button className="font-size-text" onClick={this.diffUp}>
+            Difficulty Up
+          </button>
         </div>
       </main>
     )
