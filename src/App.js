@@ -32,7 +32,7 @@ class App extends Component {
       })
   }
   leftClick = (row, col) => {
-    console.log('clicked', row, col)
+    // console.log('clicked', row, col)
     fetch(
       `https://minesweeper-api.herokuapp.com/games/${this.state.gameId}/check`,
       {
@@ -157,7 +157,22 @@ class App extends Component {
     // console.log('Game', this.state.game)
     return (
       <main>
-        <header className="font-size-text"> Let's Play Mine Sweeper </header>
+        <header className="font-size-text"> 
+          <h1>
+            Let's Play Mine Sweeper
+          </h1>
+          <div className="reset-button">
+          <button className="font-size-text" onClick={this.diffDown}>
+            Difficulty Down
+          </button>
+          <button className="font-size-text" onClick={this.resetButton}>
+            Reset Game
+          </button>
+          <button className="font-size-text" onClick={this.diffUp}>
+            Difficulty Up
+          </button>
+        </div>
+           </header>
         <p className="d-message font-size-text">
           (Difficulty is set to {this.checkDifficulty()})
         </p>
@@ -191,17 +206,7 @@ class App extends Component {
             ))}
           </tbody>
         </table>
-        <div className="reset-button">
-          <button className="font-size-text" onClick={this.diffDown}>
-            Difficulty Down
-          </button>
-          <button className="font-size-text" onClick={this.resetButton}>
-            Reset Game
-          </button>
-          <button className="font-size-text" onClick={this.diffUp}>
-            Difficulty Up
-          </button>
-        </div>
+        <footer>© DanteHarasz.dev 2021</footer>
       </main>
     )
   }
