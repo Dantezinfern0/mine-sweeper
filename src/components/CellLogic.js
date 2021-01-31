@@ -25,5 +25,4 @@ class CellLogic extends Component {
     return rv
   }
 }
-
 export default CellLogic

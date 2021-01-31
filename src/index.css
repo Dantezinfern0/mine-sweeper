@@ -31,6 +31,10 @@ span {
   padding: 0;
   margin: 0;
 }
+td {
+  height: 20px;
+  width:20px;
+}
 footer {
   text-align: center;
   padding: 1rem;
@@ -86,15 +90,8 @@ table {
   margin: 0 30% 0 30%;
   font-size: 15rem;
 }
-td {
-  height: 20px;
-  width:20px;
-}
-.d-message {
+.center-text {
   text-align: center;
-}
-.font-size-text {
-  font-size: 64px;
 }
 .top-padding {
   padding-top: 2rem;

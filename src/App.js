@@ -157,25 +157,25 @@ class App extends Component {
     // console.log('Game', this.state.game)
     return (
       <main>
-        <header className="font-size-text"> 
+        <header> 
           <h1>
             Let's Play Mine Sweeper
           </h1>
           <div className="reset-button">
-          <button className="font-size-text" onClick={this.diffDown}>
+          <button onClick={this.diffDown}>
             Difficulty Down
           </button>
-          <button className="font-size-text" onClick={this.resetButton}>
+          <button onClick={this.resetButton}>
             Reset Game
           </button>
-          <button className="font-size-text" onClick={this.diffUp}>
+          <button onClick={this.diffUp}>
             Difficulty Up
           </button>
         </div>
            </header>
-        <p className="d-message font-size-text">
+        <h2 className="center-text">
           (Difficulty is set to {this.checkDifficulty()})
-        </p>
+        </h2>
         <div>
           {this.state.status === 'lost' ? (
             <div>
