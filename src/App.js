@@ -24,18 +24,14 @@ class App extends Component {
         return response.json()
       })
       .then(game => {
-        // console.log(game)
         this.setState({
           board: game.board,
           gameId: game.id,
           status: game.state
         })
-        // console.log(game)
-        console.log('comp did mount', this.state.status)
       })
   }
   leftClick = (row, col) => {
-    // console.log('clicked', row, col)
     fetch(
       `https://minesweeper-api.herokuapp.com/games/${this.state.gameId}/check`,
       {
@@ -51,7 +47,6 @@ class App extends Component {
     )
       .then(response => response.json())
       .then(newGameState => {
-        // console.log('newgamestate', newGameState)
         this.setState({
           board: newGameState.board,
           status: newGameState.state,
@@ -63,7 +58,6 @@ class App extends Component {
   }
   rightClick = (event, row, col) => {
     event.preventDefault()
-    // console.log('clicked', row, col)
     fetch(
       `https://minesweeper-api.herokuapp.com/games/${this.state.gameId}/flag`,
       {
@@ -87,7 +81,6 @@ class App extends Component {
       })
   }
   winOrLose() {
-    console.log('winOrLose',this.state.status)
     if (this.state.status === 'win') {
       this.setState({
         message: 'You won!',
@@ -98,11 +91,9 @@ class App extends Component {
         message: 'Oh Poop!',
         hideClass: 'red-message'
       })} else {
-        console.log('no win or lose')
-      } console.log(this.state.message, this.state.hideClass, 'WIN OR LOST HAS RUN')
+        console.log('no win or lost')}
   }
   checkCell = cell => {
-    // this.winOrLose()
     if (cell === '_') {
       return 'tdBox reveal'
     } else if (cell === 'F') {
@@ -163,7 +154,6 @@ class App extends Component {
     }
   }
   render() {
-    // console.log('Game', this.state.game)
     return (
       <main>
         <header> 
@@ -199,8 +189,7 @@ class App extends Component {
                     key={j}
                     className={this.checkCell(this.state.board[i][j])}
                     onClick={() => this.leftClick(i, j)}
-                    onContextMenu={event => this.rightClick(event, i, j)}
-                  >
+                    onContextMenu={event => this.rightClick(event, i, j)}>
                     <CellLogic cellStatus={this.state.board[i][j]} />
                   </td>
                 ))}
