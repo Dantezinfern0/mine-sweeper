@@ -8,7 +8,7 @@ class App extends Component {
     gameId: '',
     difficulty: 0,
     game: [],
-    hideClass: '',
+    messageClass: '',
     message: '',
     year: null
   }
@@ -90,12 +90,12 @@ class App extends Component {
     if (this.state.status === 'win') {
       this.setState({
         message: 'You won!',
-        hideClass: 'green-message'
+        messageClass: 'green-message'
       })
     } else if (this.state.status === 'lost') {
       this.setState({
         message: 'Oh Poop!',
-        hideClass: 'red-message'
+        messageClass: 'red-message'
       })} else {
         console.log('no win or lost')}
   }
@@ -118,7 +118,7 @@ class App extends Component {
       status: '',
       gameId: '',
       game: [],
-      hideClass: 'hide'
+      messageClass: 'hide'
     })
     this.componentDidMount()
   }
@@ -183,7 +183,7 @@ class App extends Component {
         </h2>
         <div>
            {this.state.message ? ( <div>
-              <h1 className={`${this.state.hideClass}`}>{this.state.message}</h1>
+              <h1 className={`${this.state.messageClass}`}>{this.state.message}</h1>
             </div>) : null}
         </div>
         <table>
