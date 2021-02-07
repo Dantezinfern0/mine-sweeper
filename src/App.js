@@ -9,9 +9,15 @@ class App extends Component {
     difficulty: 0,
     game: [],
     hideClass: '',
-    message: ''
+    message: '',
+    year: null
   }
   componentDidMount() {
+    let d = new Date()
+    let year = d.getFullYear()
+    this.setState({
+      year: year
+    })
     const request = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -197,7 +203,7 @@ class App extends Component {
             ))}
           </tbody>
         </table>
-        <footer>© DanteHarasz.dev 2021</footer>
+        <footer>© DanteHarasz.dev {this.state.year}</footer>
       </main>
     )
   }
