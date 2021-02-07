@@ -83,6 +83,7 @@ table {
   text-align: center;
   margin: 0 30% 0 30%;
   font-size: 15rem;
+  border-radius: 12px;
 }
 .green-message {
   background-color: green;

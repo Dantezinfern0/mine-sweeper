@@ -8,7 +8,8 @@ class App extends Component {
     gameId: '',
     difficulty: 0,
     game: [],
-    hideClass: ''
+    hideClass: '',
+    message: ''
   }
   componentDidMount() {
     const request = {
@@ -23,14 +24,14 @@ class App extends Component {
         return response.json()
       })
       .then(game => {
-        console.log(game)
+        // console.log(game)
         this.setState({
           board: game.board,
-          message: '',
           gameId: game.id,
-          hideClass: ''
+          status: game.state
         })
         // console.log(game)
+        console.log('comp did mount', this.state.status)
       })
   }
   leftClick = (row, col) => {
@@ -50,17 +51,19 @@ class App extends Component {
     )
       .then(response => response.json())
       .then(newGameState => {
-        console.log('newgamestate', newGameState)
+        // console.log('newgamestate', newGameState)
         this.setState({
           board: newGameState.board,
           status: newGameState.state,
           gameId: newGameState.id
         })
+        this.winOrLose()
+        console.log('LEFT CLICK', this.state.status)
       })
   }
   rightClick = (event, row, col) => {
     event.preventDefault()
-    console.log('clicked', row, col)
+    // console.log('clicked', row, col)
     fetch(
       `https://minesweeper-api.herokuapp.com/games/${this.state.gameId}/flag`,
       {
@@ -83,7 +86,23 @@ class App extends Component {
         })
       })
   }
+  winOrLose() {
+    console.log('winOrLose',this.state.status)
+    if (this.state.status === 'win') {
+      this.setState({
+        message: 'You won!',
+        hideClass: 'green-message'
+      })
+    } else if (this.state.status === 'lost') {
+      this.setState({
+        message: 'Oh Poop!',
+        hideClass: 'red-message'
+      })} else {
+        console.log('no win or lose')
+      } console.log(this.state.message, this.state.hideClass, 'WIN OR LOST HAS RUN')
+  }
   checkCell = cell => {
+    // this.winOrLose()
     if (cell === '_') {
       return 'tdBox reveal'
     } else if (cell === 'F') {
@@ -94,21 +113,7 @@ class App extends Component {
       return 'tdBox cellFlagBomb'
     } else if (+cell >= 1 || +cell <= 8) {
       return 'tdBox number'
-    } else if (this.state.game.state === 'win') {
-      this.setState({
-        message: 'You won!'
-      })
-    } else if (this.state.game.state === 'lost') {
-      this.setState({
-        message: 'You lose.'
-      })
-    } else if (this.state.game.state === 'new') {
-      this.setState({
-        message: ''
-      })
-    } else {
-      return 'tdBox'
-    }
+    }  else return 'tdBox'
   }
   resetButton = () => {
     this.setState({
@@ -181,16 +186,9 @@ class App extends Component {
           (Difficulty is set to {this.checkDifficulty()})
         </h2>
         <div>
-          {this.state.status === 'lost' ? (
-            <div>
-              <h1 className={`${this.state.hideClass} red-message`}> You lost! </h1>
-            </div>
-          ) : null}
-          {this.state.status === 'won' ? (
-            <div>
-              <h1 className={`${this.state.hideClass} green-message`}> You won! </h1>
-            </div>
-          ) : null}
+           {this.state.message ? ( <div>
+              <h1 className={`${this.state.hideClass}`}>{this.state.message}</h1>
+            </div>) : null}
         </div>
         <table>
           <tbody>
