@@ -167,13 +167,13 @@ class App extends Component {
             Let's Play Mine Sweeper
           </h1>
           <div className="reset-button">
-          <button onClick={this.diffDown}>
+          <button className="hide-on-mobile" onClick={this.diffDown}>
             Difficulty Down
           </button>
           <button onClick={this.resetButton}>
             Reset Game
           </button>
-          <button onClick={this.diffUp}>
+          <button className="hide-on-mobile" onClick={this.diffUp}>
             Difficulty Up
           </button>
         </div>
