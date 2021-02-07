@@ -7,7 +7,8 @@ class App extends Component {
     status: '',
     gameId: '',
     difficulty: 0,
-    game: []
+    game: [],
+    hideClass: ''
   }
   componentDidMount() {
     const request = {
@@ -26,7 +27,8 @@ class App extends Component {
         this.setState({
           board: game.board,
           message: '',
-          gameId: game.id
+          gameId: game.id,
+          hideClass: ''
         })
         // console.log(game)
       })
@@ -110,9 +112,11 @@ class App extends Component {
   }
   resetButton = () => {
     this.setState({
-      startGame: [],
-      id: '',
-      state: ''
+      board: [],
+      status: '',
+      gameId: '',
+      game: [],
+      hideClass: 'hide'
     })
     this.componentDidMount()
   }
@@ -179,12 +183,12 @@ class App extends Component {
         <div>
           {this.state.status === 'lost' ? (
             <div>
-              <h1 className="red-message"> You lost! </h1>
+              <h1 className={`${this.state.hideClass} red-message`}> You lost! </h1>
             </div>
           ) : null}
           {this.state.status === 'won' ? (
             <div>
-              <h1 className="green-message"> You won! </h1>
+              <h1 className={`${this.state.hideClass} green-message`}> You won! </h1>
             </div>
           ) : null}
         </div>
